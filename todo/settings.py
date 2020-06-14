@@ -25,7 +25,11 @@ SECRET_KEY = 'eqm7@)$fnhv0=n4vaar4(xmjq5kf94u4%$=tk)bt4_uwv3h&=x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://mylistdjango.herokuapp.com']
+ALLOWED_HOSTS = ['https://mylistdjango.herokuapp.com',
+'http://127.0.0.1',
+'127.0.0.1:8000'
+
+]
 
 
 # Application definition
@@ -52,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+     'django.middleware.security.SecurityMiddleware',
+  'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'todo.urls'
@@ -138,7 +144,7 @@ CORS_ORIGIN_WHITELIST = [
 
 
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS =[
       os.path.join(BASE_DIR, 'build/static')
