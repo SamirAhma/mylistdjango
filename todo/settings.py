@@ -60,7 +60,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'frontend/build')
+            os.path.join(BASE_DIR, 'build')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -136,6 +136,6 @@ CORS_ORIGIN_WHITELIST = [
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
-# STATICFILES_DIRS =[
-#       os.path.join(BASE_DIR, 'frontend/build/static')
-# ]
+STATICFILES_DIRS =[
+      os.path.join(BASE_DIR, 'build/static')
+]
