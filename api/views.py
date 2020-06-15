@@ -58,3 +58,7 @@ def taskDelete(request,pk):
     task.delete()
   
     return Response('Item successfully deleted!')
+
+
+def home(request):
+    return render(request, 'index.html')

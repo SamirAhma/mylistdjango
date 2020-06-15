@@ -28,7 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['https://mylistdjango.herokuapp.com',
 'http://127.0.0.1',
 '127.0.0.1:8000',
-'mylistdjango.herokuapp.com'
+'mylistdjango.herokuapp.com',
+'127.0.0.1'
+
 
 ]
 
@@ -45,6 +47,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
+    
 
 ]
 
