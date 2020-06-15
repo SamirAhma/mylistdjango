@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['https://mylistdjango.herokuapp.com',
 'http://127.0.0.1',
-'127.0.0.1:8000'
+'127.0.0.1:8000',
+'mylistdjango.herokuapp.com'
 
 ]
 
