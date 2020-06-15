@@ -61,4 +61,4 @@ def taskDelete(request,pk):
 
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'build/index.html')
