@@ -60,5 +60,5 @@ def taskDelete(request,pk):
     return Response('Item successfully deleted!')
 
 
-def home(request):
-    return render(request, 'build/index.html')
+# def home(request):
+#     return render(request, 'build/index.html')
