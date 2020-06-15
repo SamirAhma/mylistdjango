@@ -50,7 +50,7 @@ componentDidMount(){
 
 fetchTasks(){
    console.log('Fetching...') 
-   fetch('http://127.0.0.1:8000/api/task-list/')
+   fetch('https://mylistdjango.herokuapp.com/api/task-list/')
    .then(response=> response.json())
    .then(data=>
     this.setState({
@@ -76,10 +76,10 @@ handleSubmit(e){
   e.preventDefault()
   console.log('ITEM' ,this.state.activeItem)
   var csrftoken = this.getCookie('csrftoken');
-  var url ='http://127.0.0.1:8000/api/task-create/'
+  var url ='https://mylistdjango.herokuapp.com/api/task-create/'
 
   if(this.state.editing == true){
-    url = `http://127.0.0.1:8000/api/task-update/${this.state.activeItem.id}/`
+    url = `https://mylistdjango.herokuapp.com/api/task-update/${this.state.activeItem.id}/`
     this.setState({
       editing:false
     })
@@ -122,7 +122,7 @@ startEdit(task){
 
 deleteItem(task){
   var csrftoken = this.getCookie('csrftoken');
-  fetch(`http://127.0.0.1:8000/api/task-delete/${task.id}/`, {
+  fetch(`https://mylistdjango.herokuapp.com/api/task-delete/${task.id}/`, {
     method:'DELETE',
     headers:{
       'Content-type':'application/json',
@@ -138,7 +138,7 @@ strikeUnstrike(task){
   task.completed = !task.completed
   var csrftoken = this.getCookie('csrftoken');
   console.log('TASK', task.completed)
-  var url = `http://127.0.0.1:8000/api/task-update/${task.id}/`
+  var url = `https://mylistdjango.herokuapp.com/api/task-update/${task.id}/`
 
   fetch(url,{
     method:'POST',
